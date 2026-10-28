@@ -1,0 +1,6 @@
+{
+  "name": "FinanDev - Gestor Financeiro & Mentor de Programação",
+  "description": "Aplicativo de gestão financeira pessoal para iniciantes com explicações linha a linha, código puro HTML/CSS/JS e LocalStorage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

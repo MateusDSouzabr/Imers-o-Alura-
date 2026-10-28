@@ -12,20 +12,21 @@ import {
   BookOpen,
   ArrowRight
 } from 'lucide-react';
-import { HTML_CODE_DATA, CSS_CODE_DATA, JS_CODE_DATA, FileCodeData } from '../data/mentorContent';
+import { HTML_CODE_DATA, CSS_CODE_DATA, JS_CODE_DATA, README_CODE_DATA, FileCodeData } from '../data/mentorContent';
 
 interface MentorCodeViewerProps {
-  initialFile?: 'html' | 'css' | 'js';
+  initialFile?: 'html' | 'css' | 'js' | 'readme';
 }
 
 export const MentorCodeViewer: React.FC<MentorCodeViewerProps> = ({ initialFile = 'js' }) => {
-  const [activeTab, setActiveTab] = useState<'html' | 'css' | 'js'>(initialFile);
+  const [activeTab, setActiveTab] = useState<'html' | 'css' | 'js' | 'readme'>(initialFile);
   const [selectedLine, setSelectedLine] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
 
   const currentFileData: FileCodeData = 
     activeTab === 'html' ? HTML_CODE_DATA :
-    activeTab === 'css' ? CSS_CODE_DATA : JS_CODE_DATA;
+    activeTab === 'css' ? CSS_CODE_DATA : 
+    activeTab === 'readme' ? README_CODE_DATA : JS_CODE_DATA;
 
   const rawLines = currentFileData.code.split('\n');
 
@@ -58,7 +59,7 @@ export const MentorCodeViewer: React.FC<MentorCodeViewerProps> = ({ initialFile 
         </div>
 
         {/* Abas dos arquivos */}
-        <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-xl border border-slate-800 self-start md:self-auto">
+        <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-xl border border-slate-800 self-start md:self-auto flex-wrap">
           <button
             onClick={() => { setActiveTab('html'); setSelectedLine(35); }}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
@@ -92,7 +93,19 @@ export const MentorCodeViewer: React.FC<MentorCodeViewerProps> = ({ initialFile 
             }`}
           >
             <Code2 className="w-3.5 h-3.5 text-amber-300" />
-            script.js (Lógica)
+            script.js
+          </button>
+
+          <button
+            onClick={() => { setActiveTab('readme'); setSelectedLine(7); }}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              activeTab === 'readme'
+                ? 'bg-purple-600 text-white shadow'
+                : 'text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <BookOpen className="w-3.5 h-3.5 text-purple-300" />
+            README.md
           </button>
         </div>
       </div>

@@ -773,6 +773,84 @@ renderizarLista();`,
   ]
 };
 
+export const README_CODE_DATA: FileCodeData = {
+  filename: 'README.md',
+  language: 'markdown',
+  description: 'Documentação completa com objetivos de uso, funcionamento detalhado passo a passo e todos os complementos e tecnologias utilizadas.',
+  code: `# 💰 FinanDev - Gestor Financeiro Pessoal & Laboratório Didático
+
+> Um sistema de gestão financeira pessoal e ambiente de aprendizado interativo projetado para ensinar iniciantes a construir aplicações web completas a partir dos fundamentos puros: **HTML5**, **CSS3**, **JavaScript Vanilla** e **LocalStorage**.
+
+---
+
+## 🎯 1. Objetivos de Uso
+
+### A. Objetivo Prático (Para o Usuário do Aplicativo)
+- Organização Financeira Descomplicada: Registro ágil de entradas (salários, freelas) e saídas (aluguel, contas, alimentação).
+- Diagnóstico Instantâneo do Saldo: Visibilidade visual se a conta está no azul (positivo) ou no vermelho (negativo).
+- Privacidade e Acesso Offline: Dados salvos no próprio navegador com LocalStorage, sem necessidade de servidores ou contas.
+
+### B. Objetivo Didático e Pedagógico (Para o Estudante de Programação)
+- Aprender a Base Real da Web: Dominar HTML5, CSS3 e JS Puro antes de depender de frameworks.
+- Perder o Medo do DOM: Aprender como o JS "pesca" elementos (getElementById) e reage a eventos (addEventListener).
+- Dominar a Persistência: Compreender como gravar na memória permanente do navegador com JSON.stringify e JSON.parse.
+- Estruturação de Código Limpo: Separar Estrutura (HTML), Estilo (CSS) e Regras de Negócio (JS).
+
+---
+
+## ⚙️ 2. Como o Software Funciona (Fluxo em 5 Etapas)
+
+1. Entrada de Dados: Usuário preenche Descrição, Valor numérico e Tipo (Receita ou Despesa).
+2. Interceptação do Evento: e.preventDefault() cancela o recarregamento da página e valida os campos.
+3. Criação do Objeto & LocalStorage: Gera ID único com Date.now(), adiciona ao Array com unshift() e salva em texto via JSON.stringify().
+4. Cálculo Matemático: Percorre o array somando receitas e despesas, aplicando Saldo = Receitas - Despesas.
+5. Renderização no DOM: Atualiza os textos formatados em R$ e recria a lista <li> na tela com botão de exclusão.
+
+---
+
+## 📦 3. Complementos e Tecnologias Utilizadas
+
+### No Projeto do Aluno (Offline & Autônomo):
+- HTML5 Semântico: <header>, <section>, <form>, <input>, <select>, <ul>.
+- CSS3 Moderno: Flexbox e CSS Grid para layout responsivo.
+- JavaScript Vanilla: Funções, manipulação de arrays (forEach, filter, unshift) e eventos.
+- Web Storage API (localStorage): Armazenamento permanente nativo de até 5MB.
+- Intl.NumberFormat: Formatação nativa de moeda brasileira (R$).
+
+### No Ambiente Interativo do Mentor:
+- React 19 & TypeScript: Para interface em abas e tipagem segura.
+- Tailwind CSS v4: Estilização moderna e contraste de alta legibilidade.
+- Lucide React: Ícones vetoriais.
+- Vite: Bundler rápido de desenvolvimento.`,
+  lines: [
+    {
+      lineNum: 1,
+      text: '# 💰 FinanDev - Gestor Financeiro Pessoal & Laboratório Didático',
+      explanation: 'Título do projeto. Em Markdown, o caractere # define o cabeçalho de nível 1.',
+      concept: 'Título Markdown'
+    },
+    {
+      lineNum: 7,
+      text: '## 🎯 1. Objetivos de Uso',
+      explanation: 'Divide claramente os objetivos entre a utilidade prática do usuário e o aprendizado do aluno.',
+      concept: 'Objetivos de Uso'
+    },
+    {
+      lineNum: 23,
+      text: '## ⚙️ 2. Como o Software Funciona (Fluxo em 5 Etapas)',
+      explanation: 'Descreve o ciclo de vida completo de uma transação: da digitação à renderização no DOM.',
+      concept: 'Arquitetura de Dados'
+    },
+    {
+      lineNum: 33,
+      text: '## 📦 3. Complementos e Tecnologias Utilizadas',
+      explanation: 'Lista todos os recursos nativos utilizados pelo aluno e as bibliotecas do ambiente didático.',
+      concept: 'Stack Tecnológica'
+    }
+  ]
+};
+
+
 export const GLOSSARY_TERMS = [
   {
     term: 'HTML (HyperText Markup Language)',
